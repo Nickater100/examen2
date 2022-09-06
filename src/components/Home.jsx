@@ -1,6 +1,6 @@
 import Card from "./Cards";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect} from "react";
+import { useEffect, useState} from "react";
 import { allProduct,getMongo} from "../actions/index";
 import Form from "./Form"
 import CardM from "./CardsM";
@@ -12,6 +12,7 @@ function Home(){
     const mongo = useSelector((state) => state.mongo)
     const mongo2 = mongo.slice(0,10)
     const producto = useSelector((state) => state.producto)
+    const [modal, setModal] = useState(false)
 
     useEffect(()=>{
         dispatch(allProduct())
@@ -19,19 +20,32 @@ function Home(){
      }, [dispatch])
 
   return(
+    <>
+     {
+            modal ? <div className="modal"><Form/></div> : null
+          } 
     <div className="fondo-buscar">
         <div className="fondo">
-              <div className={"Cards"}>
-                <p>Lista de productos</p>
-             <ul className={"grid"}> {productos.length === 0 ? "loading" : productos?.map(el =>{
+          <button className="agregar" onClick={()=>setModal(!modal)} >+</button>  
+        <p className="titulo">Lista de productos</p>
+              <div className="Cards">
+             <div className="grid"> {productos.length === 0 ? "loading" : productos?.map(el =>{
             return (
-            <div className={"margin"}><Card  name={el.producto} id={el.id}/></div>)
+                <Card key={el.id} name={el.producto} id={el.id}/>)
               })}
-              </ul>
+              </div>
+          </div>
+          <p className="titulo">Historial de acciones</p>
+              <div className="Cards">
+             <div className="grid"> {mongo2.length === 0 ? "loading" : mongo2?.map(el =>{
+            return (
+                <Card  action={el.action} id={el.producto} Query={el.Query}/>)
+              })}
+              </div>
           </div>
       </div>
    </div>
-    
+    </>
 )
 }
 

@@ -5,6 +5,7 @@ import { allProduct, addProduct } from "../actions/index";
 import "./Form.css"
 
 
+
  function validate(producto){
     let errores = {};
     if (!producto.producto) {
@@ -37,32 +38,17 @@ export default function AddGame() {
    
 
     return (
-        <div className= "fondo-game-add">
-            <div className= "container-black">
-                    <form className= "agregarGame" onSubmit={handleSubmit}>
-                        <div className= "container-esc-img">
-                            <div className= "container-img">
-                                {/* <input className="img-subir" type="file" name="file"/> */}
-                            </div>
-                            <div className="descripcion-juego">
-                                <p className="producto"> Producto:
+        
+                    <form className= "form" onSubmit={handleSubmit}>
+                                <label className="label"> Producto:
                                     <input className={errores.producto? "error" : "exito"}
                                         name= "producto"
                                         value={productoNuevo.name} 
                                         onChange={selectedChange} 
                                         placeholder="producto"/>
                                         {errores.producto ? <p className ={"error"}>{errores.producto}</p> : null}
-                                </p>
-                                <div>
-                                                       
-                                </div>
-                                <div>
-                                    <button className= "boton-agregar" onClick={addProduct(productoNuevo)}>Agregar producto</button>
-                                </div>
-                            </div>                                           
-                        </div>
+                                </label>
+                                    <button className= "boton-agregar" onClick={addProduct(productoNuevo)}>Agregar producto</button>                                         
                     </form>
-            </div>
-        </div>
-    )
+     )
     }

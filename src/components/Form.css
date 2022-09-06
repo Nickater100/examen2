@@ -1,0 +1,31 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label{
+    color:white;
+}
+
+.error{
+    color:red;
+    outline: none;
+    margin-left: 15px;
+}
+
+.exito{
+    color:green;
+    background-color: rgba(255, 255, 255, 0.17);
+    outline: none;
+    margin-left: 15px;
+    border: 1px solid green;
+}
+
+.boton-agregar{
+   border-radius: 10px;
+   padding: 5px 10px;
+   background-color: white;
+   margin: 20px;
+}

@@ -1,31 +1,53 @@
 .fondo-buscar{
-    background-color: black;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    display: flex;
+    justify-content: center;
 }
 
 .fondo{
+    position: relative;
     display: flex;
-    position: absolute;
-    left: 80px; bottom:142px;
-    background-color: rgba(0, 0, 0, 0.8);
-    height: 710px;
-    width: 830px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #212121;
     border-radius: 4px;
-    margin-top: 8%;
-    margin-left: 22%;
+    width: 80%;
 }
 
 .Cards{
-    display: flex;
     position: relative;
-    right: 120px; bottom: 20px;
-    height: 400px;
-    width: 1060px;
+    padding: 15px;
     background-color: rgba(243, 243, 243, 0.8);
     border-radius: 4px;
-    margin-top: 8%;
-    margin-left: 22%;
+}
+
+.titulo{
+    display: inline-flex;
+    position: relative;
+    font-size: 25px;
+    color: white;
+}
+
+.agregar{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 50%;
+    background-color: rgb(7, 245, 233);
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #303030;
+    z-index: 1;
+    
 }
