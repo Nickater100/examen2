@@ -36,10 +36,10 @@ function Home(){
               </div>
           </div>
           <p className="titulo">Historial de acciones</p>
-              <div className="Cards">
+              <div className="CardsM">
              <div className="grid"> {mongo2.length === 0 ? "loading" : mongo2?.map(el =>{
             return (
-                <Card  action={el.action} id={el.producto} Query={el.Query}/>)
+                <CardM  action={el.action} producto={el.producto} Query={el.Query}/>)
               })}
               </div>
           </div>
